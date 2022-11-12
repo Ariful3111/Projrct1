@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 
 class AppString {
-  static const logoUrl = "assets/logo/28755812_christmas_2012_new_6518.jpg";
-  static const topRightBottontext = "Record their answer";
-  static const titleText = "Grow closer to your loved ones\nby asking them this question.";
   static const List cardText = <String>[
     'Did you receive any special rewards?',
     'Do you have memories of what your parents said you were like as a baby?',
@@ -16,6 +13,5 @@ class AppString {
     'What alternative career do you wish you would\'ve tried?',
     'What did you feel unqualified to do for work? How did you respond to the challenge?'
   ];
-  static const bottomCenterText = 'Made with love by TimeWell';
   static final Uri webUrl = Uri.parse('https://www.timewell.io/');
 }

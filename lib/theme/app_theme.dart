@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:course_project_1/styles/app color.dart';
 
 class AppTheme{
 
   ThemeData lightTheme(context)=> ThemeData(
     brightness: Brightness.light,
     iconTheme: IconThemeData(
-      color: Colors.tealAccent,
+      color: AppColor.cyan,
       size: 22.w,
     ),
     colorScheme: ColorScheme.light(),
@@ -15,7 +16,7 @@ class AppTheme{
     textTheme: GoogleFonts.poppinsTextTheme(
       Theme.of(context).textTheme.apply(),
     ),
-    scaffoldBackgroundColor: Color(0xFFD4E6F1),
+    scaffoldBackgroundColor: AppColor.white,
   );
 
   ThemeData darkTheme(context) => ThemeData(
@@ -28,6 +29,6 @@ class AppTheme{
     textTheme: GoogleFonts.actorTextTheme(
       Theme.of(context).textTheme.apply(),
     ),
-    scaffoldBackgroundColor: Colors.black26,
+    scaffoldBackgroundColor: AppColor.white,
   );
 }

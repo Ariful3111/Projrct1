@@ -3,11 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-
 import '../responsive/size_config.dart';
 import '../routes/routes.dart';
 import '../styles/app color.dart';
 import '../styles/app string.dart';
+import '../styles/elevatedbutton.dart';
+import '../styles/outlinebutton.dart';
 
 class Web extends StatefulWidget {
   const Web({Key? key}) : super(key: key);
@@ -46,38 +47,25 @@ class _WebState extends State<Web> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(15.0),
-                  child: InkWell(
-                    onTap: () {
-                      Get.toNamed(recordanswer);
-                    },
-                    child: Container(
-                      height: MediaQuery.of(context).size.height * 0.03,
-                      width: MediaQuery.of(context).size.width * 0.2,
-                      decoration: BoxDecoration(
-                        border: Border.all(width: 2, color: AppColor.cyan),
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      child: Center(
-                        child: Text(
-                          ('Record their answer'),
-                          style: TextStyle(),
-                        ),
-                      ),
-                    ),
+                  padding: const EdgeInsets.only(top: 50, right: 30),
+                  child: outlinedButton(
+                    'Record their answer',
+                    width: Get.width * 0.2,
+                    height: Get.height * 0.05,
+                    onPress: () => recordanswer,
                   ),
                 ),
               ],
             ),
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.1,
+              height: MediaQuery.of(context).size.height * 0.170,
               width: MediaQuery.of(context).size.width * 0.1,
             ),
             Text(
               ('Grow closer to your love ones \n by asking them this question'),
               style: TextStyle(
-                  color: AppColor.cyan,
-                  ),
+                color: AppColor.cyan,
+              ),
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.02,
@@ -100,7 +88,10 @@ class _WebState extends State<Web> {
               child: Center(
                 child: AutoSizeText(
                   AppString.cardText[index],
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: AppColor.cyan),
+                  style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: AppColor.cyan),
                   maxFontSize: 40,
                   maxLines: 3,
                 ),
@@ -115,45 +106,20 @@ class _WebState extends State<Web> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    InkWell(
-                      onTap: () {},
-                      child: Container(
-                        height: MediaQuery.of(context).size.height * 0.0350,
-                        width: MediaQuery.of(context).size.width * 0.2,
-                        decoration: BoxDecoration(
-                          color: AppColor.cyan,
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        child: Center(
-                          child: Text(
-                            ('Copy this question'),
-                            style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                              color: AppColor.white,
-                            ),
-                          ),
-                        ),
-                      ),
+                    elevatedButton('Copy this question',
+                        onPress: () {},
+                        width: Get.width * 0.250,
+                        height: Get.height*0.05
                     ),
                     SizedBox(
                       width: MediaQuery.of(context).size.width * 0.02,
                     ),
-                    InkWell(
-                      onTap: _nextQuestion,
-                      child: Container(
-                        height: MediaQuery.of(context).size.height * 0.0350,
-                        width: MediaQuery.of(context).size.width * 0.2,
-                        decoration: BoxDecoration(
-                          border: Border.all(width: 2, color: AppColor.cyan),
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        child: Center(
-                          child: Text(
-                            ('Try another one'),
-                          ),
-                        ),
-                      ),
+                    outlinedButton(
+                      'Try another one',
+                      iconData: Icons.compare_arrows,
+                      height: Get.height*0.05,
+                      width: Get.width * 0.250,
+                      onPress: _nextQuestion,
                     ),
                   ],
                 ),
